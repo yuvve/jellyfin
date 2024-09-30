@@ -61,7 +61,7 @@ namespace Emby.Server.Implementations.Data
                     "create index if not exists UserDatasIndex3 on UserDatas (key, userId, playbackPositionTicks)",
                     "create index if not exists UserDatasIndex4 on UserDatas (key, userId, isFavorite)",
                     "create index if not exists UserDatasIndex5 on UserDatas (key, userId, lastPlayedDate)",
-                    "create index if not exists UserDatasIndex6 on UserDatas (key, userId, isWatchlisted"));
+                    "create index if not exists UserDatasIndex6 on UserDatas (key, userId, isWatchlisted)"));
 
                 if (!userDataTableExists)
                 {
