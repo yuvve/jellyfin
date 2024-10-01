@@ -182,7 +182,7 @@ namespace MediaBrowser.Controller.Entities
             query.Recursive = true;
             query.Parent = parent;
             query.SetUser(user);
-            query.IsWatchlisted = true;
+            query.IsFavorite = true;
             query.IncludeItemTypes = new[] { BaseItemKind.Series };
 
             return _libraryManager.GetItemsResult(query);
@@ -193,7 +193,7 @@ namespace MediaBrowser.Controller.Entities
             query.Recursive = true;
             query.Parent = parent;
             query.SetUser(user);
-            query.IsWatchlisted = true;
+            query.IsFavorite = true;
             query.IncludeItemTypes = new[] { BaseItemKind.Episode };
 
             return _libraryManager.GetItemsResult(query);
@@ -215,7 +215,7 @@ namespace MediaBrowser.Controller.Entities
             query.Recursive = true;
             query.Parent = parent;
             query.SetUser(user);
-            query.IsFavorite = true;
+            query.IsWatchlisted = true;
             query.IncludeItemTypes = new[] { BaseItemKind.Episode };
 
             return _libraryManager.GetItemsResult(query);
@@ -226,7 +226,7 @@ namespace MediaBrowser.Controller.Entities
             query.Recursive = true;
             query.Parent = parent;
             query.SetUser(user);
-            query.IsFavorite = true;
+            query.IsWatchlisted = true;
             query.IncludeItemTypes = new[] { BaseItemKind.Series };
 
             return _libraryManager.GetItemsResult(query);
