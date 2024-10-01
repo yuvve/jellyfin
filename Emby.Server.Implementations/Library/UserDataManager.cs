@@ -104,6 +104,11 @@ namespace Emby.Server.Implementations.Library
                 userData.IsFavorite = userDataDto.IsFavorite.Value;
             }
 
+            if (userDataDto.IsWatchlisted.HasValue)
+            {
+                userData.IsWatchlisted = userDataDto.IsWatchlisted.Value;
+            }
+
             if (userDataDto.Likes.HasValue)
             {
                 userData.Likes = userDataDto.Likes.Value;
@@ -198,6 +203,7 @@ namespace Emby.Server.Implementations.Library
             return new UserItemDataDto
             {
                 IsFavorite = data.IsFavorite,
+                IsWatchlisted = data.IsWatchlisted,
                 Likes = data.Likes,
                 PlaybackPositionTicks = data.PlaybackPositionTicks,
                 PlayCount = data.PlayCount,
