@@ -350,7 +350,6 @@ namespace Emby.Server.Implementations.Data
             userData.PlayCount = reader.GetInt32(4);
             userData.IsFavorite = reader.GetBoolean(5);
             userData.PlaybackPositionTicks = reader.GetInt64(6);
-            userData.IsWatchlisted = reader.GetBoolean(10);
 
             if (reader.TryReadDateTime(7, out var lastPlayedDate))
             {
@@ -365,6 +364,11 @@ namespace Emby.Server.Implementations.Data
             if (reader.TryGetInt32(9, out var subtitleStreamIndex))
             {
                 userData.SubtitleStreamIndex = subtitleStreamIndex;
+            }
+
+            if (reader.TryGetBoolean(10, out var isWatchlisted))
+            {
+                userData.IsWatchlisted = isWatchlisted;
             }
 
             return userData;
