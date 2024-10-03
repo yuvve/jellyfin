@@ -288,6 +288,11 @@ namespace Emby.Server.Implementations.Library
 
             data.PlaybackPositionTicks = positionTicks;
 
+            if (playedToCompletion)
+            {
+                data.IsWatchlisted = false;
+            }
+
             return playedToCompletion;
         }
     }
