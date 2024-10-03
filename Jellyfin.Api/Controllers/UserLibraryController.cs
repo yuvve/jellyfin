@@ -326,6 +326,7 @@ public class UserLibraryController : BaseJellyfinApiController
 
         return UpdateUserItemRatingInternal(user, item, null);
     }
+
     /// <summary>
     /// Adds an item to the user's watchlist.
     /// </summary>
@@ -387,6 +388,7 @@ public class UserLibraryController : BaseJellyfinApiController
 
         return MarkWatchlist(user, item, false);
     }
+
     /// <summary>
     /// Deletes a user's saved personal rating for an item.
     /// </summary>
