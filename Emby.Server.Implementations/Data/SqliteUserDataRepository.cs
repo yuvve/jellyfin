@@ -180,7 +180,7 @@ namespace Emby.Server.Implementations.Data
 
         private static void SaveUserData(ManagedConnection db, long internalUserId, string key, UserItemData userData)
         {
-            using (var statement = db.PrepareStatement("replace into UserDatas (key, userId, rating,played,playCount,isFavorite, isWatchlisted, playbackPositionTicks,lastPlayedDate,AudioStreamIndex,SubtitleStreamIndex) values (@key, @userId, @rating,@played,@playCount,@isFavorite, @isWatchlisted,@playbackPositionTicks,@lastPlayedDate,@AudioStreamIndex,@SubtitleStreamIndex)"))
+            using (var statement = db.PrepareStatement("replace into UserDatas (key, userId, rating,played,playCount,isFavorite,isWatchlisted,playbackPositionTicks,lastPlayedDate,AudioStreamIndex,SubtitleStreamIndex) values (@key, @userId, @rating,@played,@playCount,@isFavorite, @isWatchlisted,@playbackPositionTicks,@lastPlayedDate,@AudioStreamIndex,@SubtitleStreamIndex)"))
             {
                 statement.TryBind("@userId", internalUserId);
                 statement.TryBind("@key", key);
@@ -272,7 +272,7 @@ namespace Emby.Server.Implementations.Data
 
             using (var connection = GetConnection(true))
             {
-                using (var statement = connection.PrepareStatement("select key,userid,rating,played,playCount,isFavorite, isWatchlisted, playbackPositionTicks,lastPlayedDate,AudioStreamIndex,SubtitleStreamIndex from UserDatas where key =@Key and userId=@UserId"))
+                using (var statement = connection.PrepareStatement("select key,userid,rating,played,playCount,isFavorite,isWatchlisted,playbackPositionTicks,lastPlayedDate,AudioStreamIndex,SubtitleStreamIndex from UserDatas where key =@Key and userId=@UserId"))
                 {
                     statement.TryBind("@UserId", userId);
                     statement.TryBind("@Key", key);
@@ -315,7 +315,7 @@ namespace Emby.Server.Implementations.Data
 
             using (var connection = GetConnection())
             {
-                using (var statement = connection.PrepareStatement("select key,userid,rating,played,playCount,isFavorite, isWatchlisted, splaybackPositionTicks,lastPlayedDate,AudioStreamIndex,SubtitleStreamIndex from UserDatas where userId=@UserId"))
+                using (var statement = connection.PrepareStatement("select key,userid,rating,played,playCount,isFavorite,isWatchlisted,playbackPositionTicks,lastPlayedDate,AudioStreamIndex,SubtitleStreamIndex from UserDatas where userId=@UserId"))
                 {
                     statement.TryBind("@UserId", userId);
 
